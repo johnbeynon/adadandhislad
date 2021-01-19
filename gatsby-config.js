@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Creative Portfolio`,
+    title: `A Dad and his lad`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
