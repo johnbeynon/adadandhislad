@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticQuery, graphql } from "gatsby";
 import { HelmetDatoCms } from "gatsby-source-datocms";
+import Image from "gatsby-image";
 
 import "../styles/index.sass";
 
@@ -41,8 +42,15 @@ const TemplateWrapper = ({ children }) => {
               }
             }
           }
+          logo: file(absolutePath: { regex: "/logo.png/" }) {
+          childImageSharp {
+            fixed(width: 200, quality: 95) {
+              ...GatsbyImageSharpFixed
+            }
         }
-      `}
+      }
+    }
+  `}
       render={data => (
         <div className={`container ${showMenu ? "is-open" : ""}`}>
           <HelmetDatoCms
@@ -54,6 +62,7 @@ const TemplateWrapper = ({ children }) => {
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
               </h6>
+              <Image fixed={data.logo.childImageSharp.fixed} alt="A Dad and His Lad Logo"/>
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
