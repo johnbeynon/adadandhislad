@@ -4,6 +4,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
+import Video from "../components/video"
 
 export default ({ data }) => (
   <Layout>
@@ -19,13 +20,14 @@ export default ({ data }) => (
             ))}
           </Slider>
         </div>
+        <Video videoSrcURL={data.datoCmsWork.youtubeUrl.url} videoTitle={data.datoCmsWork.youtubeUrl.title} />
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
             __html: data.datoCmsWork.descriptionNode.childMarkdownRemark.html,
           }}
         />
-        {/* <div className="sheet__gallery">
+          {/* <div className="sheet__gallery">
           <Img fluid={data.datoCmsWork.coverImage.fluid} />
         </div> */}
       </div>
@@ -56,6 +58,12 @@ export const query = graphql`
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
+      }
+      youtubeUrl {
+        providerUid
+        thumbnailUrl
+        title
+        url
       }
     }
   }
