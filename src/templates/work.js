@@ -20,7 +20,9 @@ export default ({ data }) => (
             ))}
           </Slider>
         </div>
-        <Video videoSrcURL={data.datoCmsWork.youtubeUrl.url} videoTitle={data.datoCmsWork.youtubeUrl.title} />
+        {data.datoCmsWork.youtubeUrl?.url && (
+          <Video videoSrcURL={data.datoCmsWork.youtubeUrl.url} videoTitle={data.datoCmsWork.youtubeUrl.title} />
+        )}
         <div
           className="sheet__body"
           dangerouslySetInnerHTML={{
