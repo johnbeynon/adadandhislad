@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}><ArticleType articletype={work.articletype} /> {work.title}</Link>
+                <Link to={`/posts/${work.slug}`}><ArticleType articletype={work.articletype} /> {work.title}</Link>
               </h6>
               <div className="card__description">
                 <p>{work.excerpt}</p>

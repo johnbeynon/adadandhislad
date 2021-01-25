@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `A Dad and his lad`,
+    title: `A Dad and His Lad`,
   },
   plugins: [
     `gatsby-transformer-sharp`,
