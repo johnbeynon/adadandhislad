@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
+import ArticleType from "../components/article_type"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,11 +16,14 @@ const IndexPage = ({ data }) => (
             </Link>
             <figcaption className="card__caption">
               <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}>{work.title}</Link>
+                <Link to={`/works/${work.slug}`}><ArticleType articletype={work.articletype} /> {work.title}</Link>
               </h6>
               <div className="card__description">
                 <p>{work.excerpt}</p>
               </div>
+              {/* <div className="card__date">
+               <p>{work.meta.createdAt}</p>
+              </div> */}
             </figcaption>
           </figure>
         </div>
@@ -39,6 +43,10 @@ export const query = graphql`
           title
           slug
           excerpt
+          articletype
+          meta {
+            createdAt
+          }
           coverImage {
             fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes
