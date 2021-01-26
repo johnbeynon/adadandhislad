@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-datocms-demo",
-  "description": "Gatsby DatoCMS creative portfolio demo",
+  "name": "adadandhisladuk",
+  "description": "A Dad and His Lad",
   "version": "1.0.0",
-  "author": "Stefano Verna <s.verna@datocms.com>",
+  "author": "John Beynon",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
@@ -14,6 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sass": "^2.3.18",
     "gatsby-plugin-sharp": "^2.13.0",
+    "gatsby-plugin-sitemap": "^2.11.0",
     "gatsby-source-datocms": "^2.2.4",
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-remark": "^2.8.43",

@@ -3,6 +3,7 @@ require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: `A Dad and His Lad`,
+    siteUrl: `https://adadandhislad.uk`
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -10,6 +11,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -22,6 +24,6 @@ module.exports = {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
-    },
+    }
   ],
 }
