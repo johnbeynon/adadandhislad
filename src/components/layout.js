@@ -102,7 +102,7 @@ const TemplateWrapper = ({ children }) => {
             <div className="container__mobile-header">
               <div className="mobile-header">
                 <div className="mobile-header__menu">
-                  <button
+                  <button aria-label="Show menu"
                     onClick={e => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
