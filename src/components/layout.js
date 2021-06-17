@@ -42,7 +42,7 @@ const TemplateWrapper = ({ children }) => {
               }
             }
           }
-          logo: file(absolutePath: { regex: "/logo.png/" }) {
+          logo: file(absolutePath: { regex: "/logo.webp/" }) {
           childImageSharp {
             fixed(width: 200, quality: 95) {
               ...GatsbyImageSharpFixed
